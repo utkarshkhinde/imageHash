@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Select Image</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center/cover;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    .glass {
+        width: 500px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(0, 123, 255, 0.8);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+        background: rgba(0, 86, 179, 0.9);
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+
+<div class="glass">
+    <h1>Image Encryption Tool</h1>
+
+    <form action="/encrypt" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <button type="submit" class="btn">Encrypt</button>
+    </form>
+
+    <form action="/decrypt" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <button type="submit" class="btn">Decrypt</button>
+    </form>
+</div>
+
+</body>
+</html>
